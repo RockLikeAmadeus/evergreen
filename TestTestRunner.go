@@ -5,7 +5,7 @@ import "fmt"
 func main() {
 	test := newTest("testMethod")
 	fmt.Println(test.wasRun) // Should print "false"
-	test.testMethod()
+	test.run()
 	fmt.Println(test.wasRun) // Should print "true"
 }
 
@@ -22,4 +22,8 @@ func newTest(name string) *test {
 
 func (t *test) testMethod() {
 	t.wasRun = true
+}
+
+func (t *test) run() {
+	t.testMethod()
 }
