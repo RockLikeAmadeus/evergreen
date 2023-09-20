@@ -1,10 +1,8 @@
 package main
 
-import "fmt"
-
 func main() {
-	test := NewTest("TestMethod")
-	fmt.Println(test.wasRun) // Should print "false"
+	test := NewTestCase("TestMethod")
+	Assert(!test.wasRun) // Should print "false"
 	test.Run()
-	fmt.Println(test.wasRun) // Should print "true"
+	Assert(test.wasRun) // Should print "true"
 }

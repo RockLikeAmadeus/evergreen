@@ -4,22 +4,22 @@ import (
 	"reflect"
 )
 
-type Test struct {
+type TestCase struct {
 	name   string
 	wasRun bool
 }
 
-func NewTest(name string) *Test {
-	test := Test{name: name}
+func NewTestCase(name string) *TestCase {
+	test := TestCase{name: name}
 	test.wasRun = false
 	return &test
 }
 
-func (t *Test) TestMethod() {
+func (t *TestCase) TestMethod() {
 	t.wasRun = true
 }
 
-func (t *Test) Run() {
+func (t *TestCase) Run() {
 	method := reflect.ValueOf(t).MethodByName(t.name)
 	method.Call(nil)
 }
