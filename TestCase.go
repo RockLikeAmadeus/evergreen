@@ -5,8 +5,9 @@ import (
 )
 
 type TestCase struct {
-	name   string
-	wasRun bool
+	name     string
+	wasRun   bool
+	wasSetUp bool
 }
 
 func NewTestCase(name string) *TestCase {

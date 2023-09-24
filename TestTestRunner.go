@@ -13,6 +13,6 @@ func testWasRun() {
 }
 func testSetUp() {
 	test := NewTestCase("TestMethod")
-	test.run()
+	test.Run()
 	Assert(test.wasSetUp)
 }
