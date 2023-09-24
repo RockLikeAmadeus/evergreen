@@ -25,6 +25,7 @@ func (t *TestCase) SetUp() {
 }
 
 func (t *TestCase) Run() {
+	t.SetUp()
 	method := reflect.ValueOf(t).MethodByName(t.name)
 	method.Call(nil)
 }
