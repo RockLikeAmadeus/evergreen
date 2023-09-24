@@ -10,9 +10,9 @@ type TestCase struct {
 	wasSetUp bool
 }
 
-func NewTestCase(name string) *TestCase {
+func NewTestCase(name string) TestCase {
 	test := TestCase{name: name}
-	return &test
+	return test
 }
 
 func (t *TestCase) TestMethod() {
