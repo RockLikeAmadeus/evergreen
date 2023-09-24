@@ -20,6 +20,10 @@ func (t *TestCase) TestMethod() {
 	t.wasRun = true
 }
 
+func (t *TestCase) SetUp() {
+	t.wasSetUp = true
+}
+
 func (t *TestCase) Run() {
 	method := reflect.ValueOf(t).MethodByName(t.name)
 	method.Call(nil)

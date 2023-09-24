@@ -11,6 +11,7 @@ func testWasRun() {
 	test.Run()
 	Assert(test.wasRun)
 }
+
 func testSetUp() {
 	test := NewTestCase("TestMethod")
 	test.Run()
