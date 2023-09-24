@@ -12,7 +12,6 @@ type TestCase struct {
 
 func NewTestCase(name string) *TestCase {
 	test := TestCase{name: name}
-	test.wasRun = false
 	return &test
 }
 
@@ -21,6 +20,7 @@ func (t *TestCase) TestMethod() {
 }
 
 func (t *TestCase) SetUp() {
+	t.wasRun = false
 	t.wasSetUp = true
 }
 
