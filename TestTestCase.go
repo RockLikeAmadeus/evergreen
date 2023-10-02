@@ -1,19 +1,33 @@
 package main
 
+import "fmt"
+
 func main() {
-	testWasRun()
-	testSetUp()
+	testWasRunTest := TestCaseTest{TestCase: TestCase{name: "testWasRun"}}
+	fmt.Println(testWasRunTest)
+	// testWasRunTest.Run()
+	// testCaseTest.testSetUp()
+	// testCaseTest.testWasRun()
 }
 
-func testWasRun() {
-	test := NewTestCase("TestMethod")
-	Assert(!test.wasRun)
+type TestCaseTest struct {
+	TestCase
+	test TestCase
+}
+
+func (t *TestCaseTest) setUp() {}
+
+func (t *TestCaseTest) testWasRun() {
+	test := TestCase{name: "testMethod"}
+	// t.setUp()
+	// Assert(!t.testCase.wasRun)
 	test.Run()
 	Assert(test.wasRun)
 }
 
-func testSetUp() {
-	test := NewTestCase("TestMethod")
+func (t *TestCaseTest) testSetUp() {
+	test := TestCase{name: "testMethod"}
+	// t.setUp()
 	test.Run()
 	Assert(test.wasSetUp)
 }

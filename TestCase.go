@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"reflect"
 )
 
@@ -26,6 +27,7 @@ func (t *TestCase) SetUp() {
 
 func (t *TestCase) Run() {
 	t.SetUp()
+	fmt.Println("in inner run")
 	method := reflect.ValueOf(t).MethodByName(t.name)
 	method.Call(nil)
 }
